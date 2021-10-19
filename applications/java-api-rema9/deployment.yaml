@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-api-rema9-deployment
+  namespace: java-api-rema9
+  labels:
+    app: java-api-rema9
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: java-api-rema9
+  template:
+    metadata:
+      labels:
+        app: java-api-rema9
+    spec:
+      containers:
+      - name: java-api-rema9
+        image: krakenapps.azurecr.io/renato-marciano/java-api-rema9:main
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 1
+            memory: 256M
