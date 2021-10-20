@@ -4,6 +4,7 @@ metadata:
   name: nginx0-deployment
   labels:
     app: nginx0-deployment
+  namespace: java-api-rema9
 spec:
   replicas: 2
   selector:
